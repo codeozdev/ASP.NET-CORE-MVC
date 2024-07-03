@@ -1,0 +1,12 @@
+﻿@model KitapTuru
+
+<form method="post">
+    <h1>Kitap Türü Ekle</h1>
+    <div class="form-group d-flex flex-column mb-4">
+        <label>Kitap Türü Adı</label>
+        <input type="text class="form-control" asp-for="KitapTurAdi" />
+        <span asp-validation-for="KitapTurAdi" class="text-danger"></span>
+    </div>
+    <button class="btn btn-lg btn-primary" type="submit">Ekle</button>
+    <a class="btn btn-lg btn-warning" asp-controller="KitapTuru" asp-action="Index">Geri</a>
+</form>
