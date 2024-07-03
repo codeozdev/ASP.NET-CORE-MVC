@@ -1,0 +1,11 @@
+﻿@model KitapTuru
+
+<form method="post">
+    <h1>Kitap Türü Sil</h1>
+    <div class="form-group d-flex flex-column mb-4">
+        <label>Kitap Türü Adı</label>
+        <input type="text class="form-control" asp-for="KitapTurAdi" disabled />
+    </div>
+    <button type="submit" class="btn btn-lg btn-danger">Kitap Türü Sil</button>
+    <a class="btn btn-lg btn-warning" asp-controller="KitapTuru" asp-action="Index">Geri</a>
+</form>

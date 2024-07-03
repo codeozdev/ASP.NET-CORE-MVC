@@ -61,5 +61,34 @@ namespace ASP.NET_CORE_MVC.Controllers
                 return View();
             }
         }
+        public IActionResult Sil(int id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            KitapTuru kitapTuruId = _kitapTuruContext.KitapTurleri.Find(id);
+            return View(kitapTuruId);
+        }
+
+        [HttpPost]
+        public IActionResult Sil(int id, KitapTuru item)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            KitapTuru kitapTuruId = _kitapTuruContext.KitapTurleri.Find(id);
+            if (kitapTuruId == null)
+            {
+                return NotFound();
+            }
+
+            _kitapTuruContext.KitapTurleri.Remove(kitapTuruId);
+            _kitapTuruContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
