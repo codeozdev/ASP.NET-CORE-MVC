@@ -39,5 +39,27 @@ namespace ASP.NET_CORE_MVC.Controllers
                 return View();
             }
         }
+
+        public IActionResult Guncelle(int id)
+        {
+            KitapTuru kitapTuru = _kitapTuruContext.KitapTurleri.Find(id);
+            return View(kitapTuru);
+        }
+
+
+        [HttpPost]
+        public IActionResult Guncelle(KitapTuru item)
+        {
+            if (ModelState.IsValid)
+            {
+                _kitapTuruContext.KitapTurleri.Update(item);
+                _kitapTuruContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }
