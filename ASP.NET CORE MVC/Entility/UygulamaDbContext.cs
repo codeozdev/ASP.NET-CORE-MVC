@@ -7,5 +7,6 @@ namespace ASP.NET_MVC.Entility
     {
         public UygulamaDbContext(DbContextOptions<UygulamaDbContext> options) : base(options) { }
         public DbSet<KitapTuru> KitapTurleri { get; set; }
+        public DbSet<Kitaplar> Kitaplar { get; set; }
     }
 }

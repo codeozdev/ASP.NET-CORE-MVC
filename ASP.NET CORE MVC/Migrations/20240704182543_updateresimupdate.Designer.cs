@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASP.NET_CORE_MVC.Migrations
 {
     [DbContext(typeof(UygulamaDbContext))]
-    [Migration("20240703124700_EkleProje")]
-    partial class EkleProje
+    [Migration("20240704182543_updateresimupdate")]
+    partial class updateresimupdate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,41 @@ namespace ASP.NET_CORE_MVC.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("KitapTurleri");
+                });
+
+            modelBuilder.Entity("ASP.NET_CORE_MVC.Models.Kitaplar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("KitapAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("KitapFiyat")
+                        .HasColumnType("float");
+
+                    b.Property<string>("KitapResim")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KitapTanitim")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("YayineviAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("YazarAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Kitaplar");
                 });
 #pragma warning restore 612, 618
         }

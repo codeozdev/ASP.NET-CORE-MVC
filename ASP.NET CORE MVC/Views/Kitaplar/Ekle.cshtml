@@ -1,0 +1,50 @@
+﻿@model Kitaplar
+
+<form method="post" enctype="multipart/form-data">
+    <div class="p-3 mt-5 border">
+        <div class="row pb-3">
+            <h2 class="text-primary">Kitap Türü Ekle</h2>
+            </hr>
+        </div>
+
+        <div class="mb-3">
+            <label>Kitap Adı: </label>
+            <input type="text" class="form-control" asp-for="KitapAdi" />
+            <span asp-validation-for="KitapAdi" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label>Kitap Tanımı: </label>
+            <input type="text" class="form-control" asp-for="KitapTanitim" />
+            <span asp-validation-for="KitapTanitim" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label>Kitap Yazarı: </label>
+            <input type="text" class="form-control" asp-for="YazarAdi" />
+            <span asp-validation-for="YazarAdi" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label>Kitap Yayınevi: </label>
+            <input type="text" class="form-control" asp-for="YayineviAdi" />
+            <span asp-validation-for="YayineviAdi" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label>Kitap Fiyat: </label>
+            <input type="text" class="form-control" asp-for="KitapFiyat" />
+            <span asp-validation-for="KitapFiyat" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label>Resim URL: </label>
+            <input type="file" name="file" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" style"width:250px">Kitap Ekle</button>
+        <a asp-controller="Kitaplar" asp-action="Index" class="btn btn-primary" style"width:250px">Kitaplara Geri Dön</a>
+    </div>
+</form>
+
+@* form post oldugu icin buttona tiklandiginda veriyi ekleyecek *@
