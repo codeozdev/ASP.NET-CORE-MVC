@@ -6,7 +6,7 @@
         <h1>Kitaplar</h1>
     </div>
 </div>
-<table class="table-bordered table">
+<table class="table-bordered table table-striped">
   <thead>
     <tr>
         <th>ID</th>
@@ -16,29 +16,29 @@
         <th>Kitap Yayınevi</th>
         <th>Kitap Fiyat</th>
         <th>Kitap Resim</th>
-        <th></th>
-        <th></th>
+        <th>Güncelle</th>
+        <th>Sil</th>
     </tr>
   </thead>
   <tbody>
         @foreach (var item in Model)
         {
         <tr>
-        <td>@item.Id</td>
-        <td>@item.KitapAdi</td>
-        <td>@item.KitapTanitim</td>
-        <td>@item.YazarAdi</td>
-        <td>@item.YayineviAdi</td>
-        <td>$@item.KitapFiyat</td>
-        <td>
-            <img src="@item.KitapResim" alt="Kitap Resmi" style="max-width: 100px; max-height: 100px;" />
-        </td>
-        <td>
-           <a type="button" asp-controller="Kitaplar" asp-action="Guncelle" asp-route-id="@item.Id" class="btn btn-success" style="width:150px">Güncelle</a>
-        </td>
-         <td>
-             <a type="button" asp-controller="Kitaplar" asp-action="Sil" asp-route-id="@item.Id" class="btn btn-danger" style="width:150px">Sil</a>
-        </td>
+            <td>@item.Id</td>
+            <td>@item.KitapAdi</td>
+            <td>@item.KitapTanitim</td>
+            <td>@item.YazarAdi</td>
+            <td>@item.YayineviAdi</td>
+            <td>$@item.KitapFiyat</td>
+            <td>
+                <img src="@item.KitapResim" alt="Kitap Resmi" style="max-width: 100px; max-height: 100px;" />
+            </td>
+            <td>
+              <a type="button" asp-controller="Kitaplar" asp-action="Guncelle" asp-route-id="@item.Id" class="btn btn-success">Güncelle</a>
+            </td>
+             <td>
+               <a type="button" asp-controller="Kitaplar" asp-action="Sil" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+             </td>
         </tr>
         }
   </tbody>

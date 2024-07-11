@@ -2,7 +2,25 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid bg-warning">
+    <div class="row align-items-start" style="height: 150px">
+        <div class="col-sm bg-danger">ASP.NET CORE</div>
+        <div class="col-sm bg-info">ASP.NET CORE</div>
+        <div class="col-sm bg-success align-self-center">ASP.NET CORE</div>
+    </div>
+    <div class="row justify-content-between">
+        <div class="col-2 bg-danger">ASP.NET CORE</div>
+        <div class="col-2 bg-info">ASP.NET CORE</div>
+        <div class="col-2 bg-success">ASP.NET CORE</div>
+    </div>
 </div>
+
+@* col-12 adet fakat row istediğimiz kadar *@
+
+@* DİKEYDE HİZALAMA align-items-center *@
+@* row(parent grup olarak) ->  dikeyde hizalamak için kullanılıyor.  align-items-center  (yükseklik gereliyor)*@
+@* col(child tekli olarak) ->  hizalamak için kullanılıyor.  align-self-center (yükseklik gereliyor) *@
+
+@* YATAYDA HİZALAMA justify-content-center *@
+@* row(parent grup olarak) ->  yatayda hizalamak için kullanılıyor.  justify-content-center  (genişlik gerekiyor)*@
+@* col(child tekli olarak) ->  hizalamak için kullanılıyor.  justify-self-center (genişlik gerekiyor) *@
