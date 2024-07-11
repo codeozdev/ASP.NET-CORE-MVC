@@ -1,6 +1,6 @@
 ﻿@model Kitaplar
 
-<form method="post" enctype="multipart/form-data" asp-controller="Kitaplar" asp-action="Ekle">
+<form method="post" enctype="multipart/form-data" asp-controller="Kitaplar" asp-action="Guncelle">
     <div class="p-3 mt-5 border">
         <div class="row pb-3">
             <h2 class="text-primary">Kitap Türü Ekle</h2>
@@ -42,9 +42,17 @@
             <input type="file" name="file" class="form-control" />
         </div>
 
-        <button type="submit" class="btn btn-primary" style"width:250px">Kitap Ekle</button>
+        <div class="mb-3">
+            <label>Mevcut Resim: </label>
+            @if (!string.IsNullOrEmpty(Model.KitapResim))
+            {
+                <div>
+                    <img src="@Model.KitapResim" alt="Kitap Resmi" style="max-width: 150px;" />
+                </div>
+            }
+        </div>
+
+        <button type="submit" class="btn btn-primary" style"width:250px">Kitap Güncelle</button>
         <a asp-controller="Kitaplar" asp-action="Index" class="btn btn-primary" style"width:250px">Kitaplara Geri Dön</a>
     </div>
 </form>
-
-@* form post oldugu icin buttona tiklandiginda veriyi ekleyecek *@
